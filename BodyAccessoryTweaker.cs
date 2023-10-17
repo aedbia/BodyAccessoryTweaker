@@ -61,7 +61,7 @@ namespace BodyAccessoryTweaker
                 Widgets.DrawHighlight(r1);
                 TooltipHandler.TipRegion(r1, "Only_ChangeOnColoist_Tooltip".Translate());
             }
-            Widgets.CheckboxLabeled(r1, "   ".Translate(), ref BATweakerSetting.OnlyChangeOnColoist);
+            Widgets.CheckboxLabeled(r1, "Only_ChangeOnColoist".Translate(), ref BATweakerSetting.OnlyChangeOnColoist);
             int ShowCount = 5;
             List<string> list = BATweakerCache.AllAccessory.Where(delegate (string defName)
             {
