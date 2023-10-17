@@ -52,16 +52,16 @@ namespace BodyAccessoryTweaker
             if (Mouse.IsOver(r1))
             {
                 Widgets.DrawHighlight(r1);
-                TooltipHandler.TipRegion(r1, "OnlyHideOnColoist_Tooltip".Translate());
+                TooltipHandler.TipRegion(r1, "Only_HideOnColoist_Tooltip".Translate());
             }
-            Widgets.CheckboxLabeled(r1, "OnlyHideOnColoist".Translate(), ref BATweakerSetting.OnlyHideOnColoist);
+            Widgets.CheckboxLabeled(r1, "Only_HideOnColoist".Translate(), ref BATweakerSetting.OnlyHideOnColoist);
             r1.x += r1.width + 5f;
             if (Mouse.IsOver(r1))
             {
                 Widgets.DrawHighlight(r1);
-                TooltipHandler.TipRegion(r1, "OnlyChangeOnColoist_Tooltip".Translate());
+                TooltipHandler.TipRegion(r1, "Only_ChangeOnColoist_Tooltip".Translate());
             }
-            Widgets.CheckboxLabeled(r1, "OnlyChangeOnColoist".Translate(), ref BATweakerSetting.OnlyChangeOnColoist);
+            Widgets.CheckboxLabeled(r1, "   ".Translate(), ref BATweakerSetting.OnlyChangeOnColoist);
             int ShowCount = 5;
             List<string> list = BATweakerCache.AllAccessory.Where(delegate (string defName)
             {
@@ -118,7 +118,7 @@ namespace BodyAccessoryTweaker
                         }
                         BATweakerSetting.BATSettingData data = BATweakerSetting.AccessoryData[defName];
                         Rect rect2 = new Rect(rt3.x + rt3.height, rt3.y, (rt3.width - 0.85f * rt3.height) / 3 - 0.3f * rt3.height, rt3.height);
-                        Widgets.CheckboxLabeled(rect2.TopHalf(), "HideOrNot".Translate(), ref data.HideOrNot);
+                        Widgets.CheckboxLabeled(rect2.TopHalf(), "Hide_Or_Not".Translate(), ref data.HideOrNot);
                         GUI.Label(rect2.BottomHalf().TopPart(0.7f), "Size".Translate() + ":" + data.size.ToString("F2"), GUIStyle_1);
                         data.size.x = Widgets.HorizontalSlider_NewTemp(rect2.BottomHalf().BottomPart(0.4f).LeftHalf(), data.size.x, 0.5f, 2.0f);
                         data.size.y = Widgets.HorizontalSlider_NewTemp(rect2.BottomHalf().BottomPart(0.4f).RightHalf(), data.size.y, 0.5f, 2.0f);
@@ -317,7 +317,6 @@ namespace BodyAccessoryTweaker
             BATweakerSetting.InitialSetting();
         }
     }
-
 
     public static class HarmonyPatchA6
     {
